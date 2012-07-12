@@ -1,3 +1,25 @@
+/**
+ * Universal Module Definition
+ * https://github.com/umdjs/umd/blob/master/returnExports.js
+ */
+
+(function (root, factory) {
+    if (typeof exports === 'object') {
+        // Node. Does not work with strict CommonJS, but
+        // only CommonJS-like enviroments that support module.exports,
+        // like Node.
+        module.exports = factory(require('backbone'));
+    } else if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define(['backbone'], factory);
+    } else {
+        // Browser globals
+        factory(root.Backbone);
+    }
+}(this, function (Backbone) {
+
+
+
 // CouchDB specific adjustments to Backbone
 
 // id attribute
@@ -68,3 +90,7 @@ Backbone.Model.prototype.destroy = (function() {
   };
 })();
 
+
+
+// End of Universal Module Definition
+}));

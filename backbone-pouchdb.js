@@ -1,3 +1,29 @@
+/**
+ * Universal Module Definition
+ * https://github.com/umdjs/umd/blob/master/returnExports.js
+ */
+
+(function (root, factory) {
+    if (typeof exports === 'object') {
+        // Node. Does not work with strict CommonJS, but
+        // only CommonJS-like enviroments that support module.exports,
+        // like Node.
+        module.exports = factory(
+            require('backbone'),
+            require('pouchdb'),
+            require('./backbone-couchdb')
+        );
+    } else if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define(['backbone', 'pouchdb', './backbone-couchdb'], factory);
+    } else {
+        // Browser globals
+        factory(root.Backbone, root.Pouch);
+    }
+}(this, function (Backbone, Pouch) {
+
+
+
 // Store models in *PouchDB*.
 Backbone.sync = (function() {
   // match read request to get, query or allDocs call
@@ -68,3 +94,8 @@ Backbone.sync = (function() {
 
   return sync;
 })();
+
+
+
+// End of Universal Module Definition
+}));

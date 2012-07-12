@@ -1,0 +1,17 @@
+{
+    "name": "backbone-pouchdb",
+    "version": "0.0.1-jam.1",
+    "description": "Backbone PouchDB Adapter",
+    "dependencies": {
+        "backbone": null,
+        "pouchdb": null
+    },
+    "main": "backbone-pouchdb.js",
+    "repositories": [
+        {
+            "type": "git", 
+            "url": "http://github.com/jo/backbone-pouchdb.git"
+        }
+    ],
+    "github": "http://github.com/jo/backbone-pouchdb"
+}
