@@ -80,7 +80,9 @@ Backbone.sync = (function() {
           // we alreay have a pouch adapter available
           callback(err, db, options);
         } else {
-          _.delay(open, wait *= 2);
+          _.delay(function () {
+              open(callback);
+          }, wait *= 2);
         }
       } else {
         initialized = true;
