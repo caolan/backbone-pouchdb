@@ -1,6 +1,6 @@
 {
     "name": "backbone-pouchdb",
-    "version": "0.0.1-jam.1",
+    "version": "0.0.1-jam.2",
     "description": "Backbone PouchDB Adapter",
     "dependencies": {
         "backbone": null,
